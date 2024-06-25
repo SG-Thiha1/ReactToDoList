@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 2rem;
+  display: inline-block;
+  width: 25rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  background-color: #140524;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+header img {
+  width: 20rem;
+  height: 18rem;
+  object-fit: cover;
+}
+header h3,p {
+  color: #ffffff;
+}
