@@ -15,15 +15,27 @@ function App() {
       return;
     }
     if (editIndex !== null) {
+      if (tasks.includes(newTask)) {
+        return;
+      }
       setTasks((t) => t.map((task, i) => (i === editIndex ? newTask : task)));
       setEditIndex(null);
     } else {
-      setTasks((t) => [...t, newTask]);
+      if (tasks.includes(newTask)) {
+        return;
+      } else {
+        setTasks((t) => [...t, newTask]);
+      }
     }
     setNewTask("");
   }
   function deleteTask(index) {
-    setTasks((t) => t.filter((_, i) => i !== index));
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
+    if (confirmDelete) {
+      setTasks((t) => t.filter((_, i) => i !== index));
+    }
   }
   function handleEditClick(index) {
     setNewTask(tasks[index]);
@@ -67,5 +79,4 @@ function App() {
     </>
   );
 }
-
 export default App;
