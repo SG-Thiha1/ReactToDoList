@@ -9,7 +9,6 @@ function App() {
   function handleInputChange(e) {
     setTaskInput(e.target.value);
   }
-
   function handleAddOrSaveClick() {
     if (editIndex === null) {
       // Add new task
@@ -21,16 +20,13 @@ function App() {
     }
     setTaskInput("");
   }
-
   function handleEditClick(index) {
     setEditIndex(index);
     setTaskInput(tasks[index]);
   }
-
   function deleteTask(index) {
     setTasks(t => t.filter((_, i) => i !== index));
   }
-
   return (
     <>
       <section className='to-do-list'>
